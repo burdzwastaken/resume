@@ -1,0 +1,61 @@
+[{
+  "Title": "Operating Systems",
+  "Specialities": [
+    "Linux",
+    "BSD",
+    "Windows",
+    "OSX"
+  ]
+},
+{
+  "Title": "Languages",
+  "Specialities": [
+    "Golang",
+    "Python",
+    "Ruby",
+    "Bash"
+  ]
+},
+{
+  "Title": "Technologies",
+  "Specialities": [
+    "AWS",
+    "GCE",
+    "Azure",
+    "Kubernetes",
+    "Docker", 
+    "Spinnaker", 
+    "Chef", 
+    "Terraform", 
+    "Ansible", 
+    "Packer", 
+    "Cerberus", 
+    "Vault", 
+    "Splunk", 
+    "SumoLogic", 
+    "Phantom", 
+    "DataDog", 
+    "osquery", 
+    "OSSEC", 
+    "auditd", 
+    "SeLinux", 
+    "PKI", 
+    "EnCase", 
+    "TheSleuthKit", 
+    "GRR", 
+    "Nexpose", 
+    "Qualys", 
+    "Nessus", 
+    "Nmap", 
+    "Wireshark", 
+    "PaloAlto-Networks", 
+    "F5", 
+    "Bro", 
+    "tcpdump", 
+    "Scout2", 
+    "DNS", 
+    "Suricata", 
+    "Snorby", 
+    "GoPhish"
+  ]
+}]
