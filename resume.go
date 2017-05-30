@@ -151,9 +151,9 @@ Experience
 		os.Exit(1)
 	}
 
-	f, err := os.Create("resume.md")
+	f, err := os.Create("README.md")
 	if err != nil {
-		fmt.Println("Error opening resume.md:", err)
+		fmt.Println("Error opening README.md:", err)
 		os.Exit(1)
 	}
 	defer f.Close()
