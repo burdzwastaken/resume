@@ -3,7 +3,7 @@ Matt Burdan
 
 -----------------------------------------------  
 +1 (415) 652-0435  
-burdz@burdz.net  
+burdz@burdz.net
 https://www.linkedin.com/in/burdz/  
 https://github.com/burdzwastaken  
 @burdzwastaken  

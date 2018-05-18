@@ -3,7 +3,7 @@ Matt Burdan
 
 -----------------------------------------------  
 +1 (415) 652-0435  
-burdz@burdz.net  
+burdz@burdz.net
 https://www.linkedin.com/in/burdz/  
 https://github.com/burdzwastaken  
 @burdzwastaken  
@@ -17,10 +17,10 @@ Operating Systems
 : Linux BSD Windows OSX
 
 Languages
-: Golang Python Ruby Bash
+: Golang Groovy Python Ruby Bash
 
 Technologies
-: AWS GCE Azure Kubernetes Docker Spinnaker Chef Terraform Ansible Packer Cerberus Vault Splunk SumoLogic Phantom DataDog osquery OSSEC auditd SeLinux PKI EnCase TheSleuthKit GRR Nexpose Qualys Nessus Nmap Wireshark PaloAlto-Networks F5 Bro tcpdump Scout2 DNS Suricata Snorby GoPhish
+: AWS GCE GKE Azure Kubernetes Helm Docker Spinnaker Chef Terraform Ansible Saltstack Consul git Packer Jenkins Concourse Cerberus Vault Splunk SumoLogic Phantom DataDog osquery kolide OSSEC auditd SeLinux PKI EnCase TheSleuthKit GRR Nexpose Qualys Nessus Nmap Wireshark PaloAlto-Networks F5 Bro tcpdump sops Scout2 DNS Suricata Snorby GoPhish
 
 
 Education
@@ -39,11 +39,11 @@ Education
 References
 ------
 
-will include
-: will include 
+will provide at request
+: will provide at request 
 
-will include
-: will include 
+will provide at request
+: will provide at request 
 
 
 &nbsp;
