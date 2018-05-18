@@ -81,7 +81,7 @@ Education
 ------
 
 {{ range . }}{{ .YearStart }}-{{ .YearComplete }}
-: {{ .Description }} 
+: {{ .Description }}
 
 {{ end }}`)
 	if err != nil {
@@ -109,7 +109,7 @@ References
 ------
 
 {{ range . }}{{ .Name }}
-: {{ .Description }} 
+: {{ .Description }}
 
 {{ end }}`)
 	if err != nil {
@@ -133,15 +133,13 @@ References
 	}
 
 	respTmpl, err := template.New("experience").Parse(`
-&nbsp;
-
 Experience
 ------
 
-{{ range . }}{{ .Employer }}  
-{{ .Role }}  
-{{ .Location }}  
-{{ .TimeFrame }}  
+{{ range . }}{{ .Employer }}
+{{ .Role }}
+{{ .Location }}
+{{ .TimeFrame }}
 
 {{ range .Responsibilities }} * {{ . }}
 {{ end }}

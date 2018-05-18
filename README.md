@@ -27,34 +27,32 @@ Education
 ------
 
 2012-2014
-: Bachelor of Science; Cyber Forensics, Information Security Management and Business Information Systems; Murdoch University 
+: Bachelor of Science; Cyber Forensics, Information Security Management and Business Information Systems; Murdoch University
 
 2011-2012
-: Diploma; Information Technology; Kaplan Singapore 
+: Diploma; Information Technology; Kaplan Singapore
 
 2005-2009
-: Guildford Grammar School 
+: Guildford Grammar School
 
 
 References
 ------
 
 will provide at request
-: will provide at request 
+: will provide at request
 
 will provide at request
-: will provide at request 
+: will provide at request
 
-
-&nbsp;
 
 Experience
 ------
 
-Lookout, Inc  
-Senior Security Engineer  
-San Francisco, CA  
-January 2015 - Current  
+Lookout, Inc
+Senior Security Engineer
+San Francisco, CA
+January 2015 - Current
 
  * Produced weekly hardened AMIs for multiple flavours of Linux which all of Lookout Infrastructure is deployed on. This was achieved using packer and debian packages deployed through Spinnaker. This allowed us to achieve federal compliance.
  * Deployed and responsible for Cerberus - an opensource tool for Secrets management. This has been integrated with our CI/CD pipeline along with being used by all services for secure transportation of secrets.
@@ -79,38 +77,38 @@ January 2015 - Current
  * Developed processes and procedures for offboarding users. Often was responsible for offboarding employees with production access.
  * Helped remediate issues and communication with researches through our bug bounty program with HackerOne.
 
-Newedge - Societe Generale  
-Onboarding Analyst  
-Singapore  
-August 2014 - December 2014  
+Newedge - Societe Generale
+Onboarding Analyst
+Singapore
+August 2014 - December 2014
 
  * Managed the implementation and onboarding of new client accounts
  * Perform initial sanity checks on documentation packages ensuring all activities are captured, accurately reviewed and processed in a timely fashion
  * Dealing with customers' requests concerning different changes on their accounts
  * Automated communication required to advise customers on changes to their accounts
 
-Self Employed  
-Swimming Instructor  
-Singapore  
-2009 - 2014  
+Self Employed
+Swimming Instructor
+Singapore
+2009 - 2014
 
  * Created lesson plans for all students
  * Facilitated the certification process within the swimming lesson
  * Handled all finances and scheduling management
 
-Perth Duty Free  
-Warehouse Operations  
-Perth  
-2010 - 2012  
+Perth Duty Free
+Warehouse Operations
+Perth
+2010 - 2012
 
  * Preparing and completing orders for delivery or pickup according to schedule
  * Receiving and processing warehouse stock products
  * Performing inventory controls and keeping quality standards high for audits
 
-Dimension Data  
-Work Experience  
-Perth  
-2009  
+Dimension Data
+Work Experience
+Perth
+2009
 
  * Configuring and deploying Cisco routers
 
