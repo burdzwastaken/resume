@@ -1,8 +1,33 @@
 [{
+  "Employer": "MuleSoft",
+  "Role": "Senior Platform Engineer",
+  "Location": "San Francisco, CA",
+  "TimeFrame": "August 2017 - Current",
+  "Responsibilities": [
+  "Architected and operated multi cloud, multi region large scale deployments to over one hundred thousand runtimes by creating a Core Platform to ensure consistency, availability and reliability using tooling such as Kubernetes, Spinnaker and Jenkins",
+  "Automated the entire incident process including alerting, documenting and recording all incidents using Slack, Pagerduty, Jira and NewRelic",
+  "Extended Kubernetes using CRDs and service catalog API to provide extended functionality such as IAM credentials to pods, Public cloud infrastructure provisioning and service mesh injection",
+  "Automated monitoring and observability for all critical Core Platform services"
+  ]
+},
+{
+  "Employer": "Ultimatum, Inc",
+  "Role": "CSO, CIO",
+  "Location": "San Francisco, CA",
+  "TimeFrame": "2015 - 2018",
+  "Responsibilities": [
+  "Architected and deployed the secure CI/CD infrastructure which allows for horizontal scaling",
+  "Automated all backend architecture for creation of new environments",
+  "Maintained and updated all clusters that the Ultimatum platform runs on",
+  "Created monitoring for all microservices within the Ultimatum platform",
+  "Implemented a secure way of handling all company and environment secrets that allows version control for audits"
+  ]
+},
+{
   "Employer": "Lookout, Inc",
   "Role": "Senior Security Engineer",
   "Location": "San Francisco, CA",
-  "TimeFrame": "January 2015 - Current",
+  "TimeFrame": "January 2015 - August 2017",
   "Responsibilities": [
 	"Produced weekly hardened AMIs for multiple flavours of Linux which all of Lookout Infrastructure is deployed on. This was achieved using packer and debian packages deployed through Spinnaker. This allowed us to achieve federal compliance.",
 	"Deployed and responsible for Cerberus - an opensource tool for Secrets management. This has been integrated with our CI/CD pipeline along with being used by all services for secure transportation of secrets.",

@@ -11,10 +11,10 @@
   "Title": "Languages",
   "Specialities": [
     "Golang",
-    "Groovy",
     "Python",
-    "Ruby",
-    "Bash"
+    "Bash",
+    "Groovy",
+    "Ruby"
   ]
 },
 {

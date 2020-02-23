@@ -52,7 +52,7 @@ func main() {
 Skills
 ------
 
-{{ range . }}{{ .Title }}
+{{ range . }}*{{ .Title }}*
 :{{ range .Specialities }} {{ . }}{{ end }}
 
 {{ end }}`)
@@ -80,7 +80,7 @@ Skills
 Education
 ------
 
-{{ range . }}{{ .YearStart }}-{{ .YearComplete }}
+{{ range . }}*{{ .YearStart }}*-*{{ .YearComplete }}*
 : {{ .Description }}
 
 {{ end }}`)
@@ -108,7 +108,7 @@ Education
 References
 ------
 
-{{ range . }}{{ .Name }}
+{{ range . }}*{{ .Name }}*
 : {{ .Description }}
 
 {{ end }}`)
@@ -136,7 +136,7 @@ References
 Experience
 ------
 
-{{ range . }}{{ .Employer }}
+{{ range . }}*{{ .Employer }}*
 {{ .Role }}
 {{ .Location }}
 {{ .TimeFrame }}

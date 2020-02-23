@@ -3,56 +3,77 @@ Matt Burdan
 
 -----------------------------------------------  
 +1 (415) 652-0435  
-burdz@burdz.net
+burdz@burdz.net  
 https://www.linkedin.com/in/burdz/  
 https://github.com/burdzwastaken  
 @burdzwastaken  
 
-Security engineer with a background in digital forensics and networking security with expertise in large scale secure deployments on both on-premise and cloud infrastructure using automated processes while adapting to the latest technologies. 
+Senior Platform and Security engineer who specializes in deploying, maintaining, monitoring and operating software on CI/CD architecture for on premise data centers and multi-cloud infrastructure using legacy deployment tools, cloud tooling and containers, I have a strong background in digital forensics, mobile, and network security having studied, deployed, monitored and designed rulesets for multiple different security tooling monitoring thousands of endpoints and helped achieve fedramp compliance within large enterprises.
 
 Skills
 ------
 
-Operating Systems
+*Operating Systems*
 : Linux BSD Windows OSX
 
-Languages
-: Golang Groovy Python Ruby Bash
+*Languages*
+: Golang Python Bash Groovy Ruby
 
-Technologies
+*Technologies*
 : AWS GCE GKE Azure Kubernetes Helm Docker Spinnaker Chef Terraform Ansible Saltstack Consul git Packer Jenkins Concourse Cerberus Vault Splunk SumoLogic Phantom DataDog osquery kolide OSSEC auditd SeLinux PKI EnCase TheSleuthKit GRR Nexpose Qualys Nessus Nmap Wireshark PaloAlto-Networks F5 Bro tcpdump sops Scout2 DNS Suricata Snorby GoPhish
 
 
 Education
 ------
 
-2012-2014
+*2012*-*2014*
 : Bachelor of Science; Cyber Forensics, Information Security Management and Business Information Systems; Murdoch University
 
-2011-2012
+*2011*-*2012*
 : Diploma; Information Technology; Kaplan Singapore
 
-2005-2009
+*2005*-*2009*
 : Guildford Grammar School
 
 
 References
 ------
 
-will provide at request
+*will provide at request*
 : will provide at request
 
-will provide at request
+*will provide at request*
 : will provide at request
 
 
 Experience
 ------
 
-Lookout, Inc
+*MuleSoft*
+Senior Platform Engineer
+San Francisco, CA
+August 2017 - Current
+
+ * Architected and operated multi cloud, multi region large scale deployments to over one hundred thousand runtimes by creating a Core Platform to ensure consistency, availability and reliability using tooling such as Kubernetes, Spinnaker and Jenkins
+ * Automated the entire incident process including alerting, documenting and recording all incidents using Slack, Pagerduty, Jira and NewRelic
+ * Extended Kubernetes using CRDs and service catalog API to provide extended functionality such as IAM credentials to pods, Public cloud infrastructure provisioning and service mesh injection
+ * Automated monitoring and observability for all critical Core Platform services
+
+*Ultimatum, Inc*
+CSO, CIO
+San Francisco, CA
+2015 - 2018
+
+ * Architected and deployed the secure CI/CD infrastructure which allows for horizontal scaling
+ * Automated all backend architecture for creation of new environments
+ * Maintained and updated all clusters that the Ultimatum platform runs on
+ * Created monitoring for all microservices within the Ultimatum platform
+ * Implemented a secure way of handling all company and environment secrets that allows version control for audits
+
+*Lookout, Inc*
 Senior Security Engineer
 San Francisco, CA
-January 2015 - Current
+January 2015 - August 2017
 
  * Produced weekly hardened AMIs for multiple flavours of Linux which all of Lookout Infrastructure is deployed on. This was achieved using packer and debian packages deployed through Spinnaker. This allowed us to achieve federal compliance.
  * Deployed and responsible for Cerberus - an opensource tool for Secrets management. This has been integrated with our CI/CD pipeline along with being used by all services for secure transportation of secrets.
@@ -77,7 +98,7 @@ January 2015 - Current
  * Developed processes and procedures for offboarding users. Often was responsible for offboarding employees with production access.
  * Helped remediate issues and communication with researches through our bug bounty program with HackerOne.
 
-Newedge - Societe Generale
+*Newedge - Societe Generale*
 Onboarding Analyst
 Singapore
 August 2014 - December 2014
@@ -87,7 +108,7 @@ August 2014 - December 2014
  * Dealing with customers' requests concerning different changes on their accounts
  * Automated communication required to advise customers on changes to their accounts
 
-Self Employed
+*Self Employed*
 Swimming Instructor
 Singapore
 2009 - 2014
@@ -96,7 +117,7 @@ Singapore
  * Facilitated the certification process within the swimming lesson
  * Handled all finances and scheduling management
 
-Perth Duty Free
+*Perth Duty Free*
 Warehouse Operations
 Perth
 2010 - 2012
@@ -105,7 +126,7 @@ Perth
  * Receiving and processing warehouse stock products
  * Performing inventory controls and keeping quality standards high for audits
 
-Dimension Data
+*Dimension Data*
 Work Experience
 Perth
 2009
