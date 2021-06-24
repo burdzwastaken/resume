@@ -14,7 +14,8 @@
     "Python",
     "Bash",
     "Groovy",
-    "Ruby"
+    "Ruby",
+    "Perl"
   ]
 },
 {
@@ -27,6 +28,10 @@
     "Kubernetes",
     "Helm",
     "Docker",
+    "OCI",
+    "Harbor",
+    "Istio",
+    "Service Brokers",
     "Spinnaker",
     "Chef",
     "Terraform",
@@ -57,15 +62,9 @@
     "Nessus",
     "Nmap",
     "Wireshark",
-    "PaloAlto-Networks",
-    "F5",
     "Bro",
     "tcpdump",
     "sops",
-    "Scout2",
-    "DNS",
-    "Suricata",
-    "Snorby",
-    "GoPhish"
+    "DNS"
   ]
 }]

@@ -49,10 +49,9 @@ func main() {
 	}
 
 	skillTmpl, err := template.New("skill").Parse(`
-Skills
-------
+# Skills
 
-{{ range . }}*{{ .Title }}*
+{{ range . }}## {{ .Title }}
 :{{ range .Specialities }} {{ . }}{{ end }}
 
 {{ end }}`)
@@ -77,8 +76,7 @@ Skills
 	}
 
 	eduTmpl, err := template.New("education").Parse(`
-Education
-------
+# Education
 
 {{ range . }}*{{ .YearStart }}*-*{{ .YearComplete }}*
 : {{ .Description }}
@@ -105,8 +103,7 @@ Education
 	}
 
 	refTmpl, err := template.New("references").Parse(`
-References
-------
+# References
 
 {{ range . }}*{{ .Name }}*
 : {{ .Description }}
@@ -133,10 +130,9 @@ References
 	}
 
 	respTmpl, err := template.New("experience").Parse(`
-Experience
-------
+# Experience
 
-{{ range . }}*{{ .Employer }}*
+{{ range . }}## {{ .Employer }}
 {{ .Role }}
 {{ .Location }}
 {{ .TimeFrame }}
