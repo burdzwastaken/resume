@@ -37,15 +37,6 @@ Senior Platform and Security engineer with a huge passion for open-source who sp
 : Guildford Grammar School
 
 
-# References
-
-*will provide at request*
-: will provide at request
-
-*will provide at request*
-: will provide at request
-
-
 # Experience
 
 ## MuleSoft
@@ -138,4 +129,13 @@ Perth
 2009
 
  * Configuring and deploying Cisco routers
+
+
+# References
+
+*will provide at request*
+: 
+
+*will provide at request*
+: 
 

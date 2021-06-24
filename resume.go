@@ -87,6 +87,37 @@ func main() {
 		os.Exit(1)
 	}
 
+	responsbility := []*Experience{}
+	respBytes, err := ioutil.ReadFile("experience.json")
+	if err != nil {
+		fmt.Println("Error reading experience.json:", err)
+		fmt.Println(string(respBytes))
+		os.Exit(1)
+	}
+
+	err = json.Unmarshal(respBytes, &responsbility)
+	if err != nil {
+		fmt.Println("Error unmarshalling experience:", err)
+		fmt.Println(string(respBytes))
+		os.Exit(1)
+	}
+
+	respTmpl, err := template.New("experience").Parse(`
+# Experience
+
+{{ range . }}## {{ .Employer }}
+{{ .Role }}
+{{ .Location }}
+{{ .TimeFrame }}
+
+{{ range .Responsibilities }} * {{ . }}
+{{ end }}
+{{ end }}`)
+	if err != nil {
+		fmt.Println("Error parsing experience template:", err)
+		os.Exit(1)
+	}
+
 	ref := []*References{}
 	refBytes, err := ioutil.ReadFile("references.json")
 	if err != nil {
@@ -114,37 +145,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	responsbility := []*Experience{}
-	respBytes, err := ioutil.ReadFile("experience.json")
-	if err != nil {
-		fmt.Println("Error reading experience.json:", err)
-		fmt.Println(string(refBytes))
-		os.Exit(1)
-	}
-
-	err = json.Unmarshal(respBytes, &responsbility)
-	if err != nil {
-		fmt.Println("Error unmarshalling experience:", err)
-		fmt.Println(string(respBytes))
-		os.Exit(1)
-	}
-
-	respTmpl, err := template.New("experience").Parse(`
-# Experience
-
-{{ range . }}## {{ .Employer }}
-{{ .Role }}
-{{ .Location }}
-{{ .TimeFrame }}
-
-{{ range .Responsibilities }} * {{ . }}
-{{ end }}
-{{ end }}`)
-	if err != nil {
-		fmt.Println("Error parsing experience template:", err)
-		os.Exit(1)
-	}
-
 	f, err := os.Create("README.md")
 	if err != nil {
 		fmt.Println("Error opening README.md:", err)
@@ -155,8 +155,8 @@ func main() {
 	err = copyContents("HEADER.md", f)
 	skillTmpl.Execute(f, skills)
 	eduTmpl.Execute(f, edu)
-	refTmpl.Execute(f, ref)
 	respTmpl.Execute(f, responsbility)
+	refTmpl.Execute(f, ref)
 }
 
 func copyContents(origin string, target *os.File) error {
