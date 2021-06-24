@@ -1,5 +1,6 @@
 ---
 name: Matt Burdan
+date: \today
 left-column:
   - '+1 (415) 542 6132'
   - 'burdz@burdz.net'
@@ -7,6 +8,7 @@ left-column:
 right-column:
   - 'https://www.linkedin.com/in/burdz/'
   - 'https://github.com/burdzwastaken'
+  - 'Last Updated: \today'
 ---
 
 # Summary
