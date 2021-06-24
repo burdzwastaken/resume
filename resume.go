@@ -49,10 +49,9 @@ func main() {
 	}
 
 	skillTmpl, err := template.New("skill").Parse(`
-Skills
-------
+# Skills
 
-{{ range . }}{{ .Title }}
+{{ range . }}## {{ .Title }}
 :{{ range .Specialities }} {{ . }}{{ end }}
 
 {{ end }}`)
@@ -77,15 +76,45 @@ Skills
 	}
 
 	eduTmpl, err := template.New("education").Parse(`
-Education
-------
+# Education
 
-{{ range . }}{{ .YearStart }}-{{ .YearComplete }}
+{{ range . }}*{{ .YearStart }}*-*{{ .YearComplete }}*
 : {{ .Description }}
 
 {{ end }}`)
 	if err != nil {
 		fmt.Println("Error parsing education template:", err)
+		os.Exit(1)
+	}
+
+	responsbility := []*Experience{}
+	respBytes, err := ioutil.ReadFile("experience.json")
+	if err != nil {
+		fmt.Println("Error reading experience.json:", err)
+		fmt.Println(string(respBytes))
+		os.Exit(1)
+	}
+
+	err = json.Unmarshal(respBytes, &responsbility)
+	if err != nil {
+		fmt.Println("Error unmarshalling experience:", err)
+		fmt.Println(string(respBytes))
+		os.Exit(1)
+	}
+
+	respTmpl, err := template.New("experience").Parse(`
+# Experience
+
+{{ range . }}## {{ .Employer }}
+{{ .Role }}
+{{ .Location }}
+{{ .TimeFrame }}
+
+{{ range .Responsibilities }} * {{ . }}
+{{ end }}
+{{ end }}`)
+	if err != nil {
+		fmt.Println("Error parsing experience template:", err)
 		os.Exit(1)
 	}
 
@@ -105,47 +134,14 @@ Education
 	}
 
 	refTmpl, err := template.New("references").Parse(`
-References
-------
+# References
 
-{{ range . }}{{ .Name }}
+{{ range . }}*{{ .Name }}*
 : {{ .Description }}
 
 {{ end }}`)
 	if err != nil {
 		fmt.Println("Error parsing references template:", err)
-		os.Exit(1)
-	}
-
-	responsbility := []*Experience{}
-	respBytes, err := ioutil.ReadFile("experience.json")
-	if err != nil {
-		fmt.Println("Error reading experience.json:", err)
-		fmt.Println(string(refBytes))
-		os.Exit(1)
-	}
-
-	err = json.Unmarshal(respBytes, &responsbility)
-	if err != nil {
-		fmt.Println("Error unmarshalling experience:", err)
-		fmt.Println(string(respBytes))
-		os.Exit(1)
-	}
-
-	respTmpl, err := template.New("experience").Parse(`
-Experience
-------
-
-{{ range . }}{{ .Employer }}
-{{ .Role }}
-{{ .Location }}
-{{ .TimeFrame }}
-
-{{ range .Responsibilities }} * {{ . }}
-{{ end }}
-{{ end }}`)
-	if err != nil {
-		fmt.Println("Error parsing experience template:", err)
 		os.Exit(1)
 	}
 
@@ -159,8 +155,8 @@ Experience
 	err = copyContents("HEADER.md", f)
 	skillTmpl.Execute(f, skills)
 	eduTmpl.Execute(f, edu)
-	refTmpl.Execute(f, ref)
 	respTmpl.Execute(f, responsbility)
+	refTmpl.Execute(f, ref)
 }
 
 func copyContents(origin string, target *os.File) error {
