@@ -1,6 +1,5 @@
 ---
 name: Matt Burdan
-date: \today
 left-column:
   - '+1 (415) 542 6132'
   - 'burdz@burdz.net'
@@ -8,23 +7,82 @@ left-column:
 right-column:
   - 'https://www.linkedin.com/in/burdz/'
   - 'https://github.com/burdzwastaken'
+  - 'https://void.burdz.net'
   - 'Last Updated: \today'
 ---
 
 # Summary
 
-Senior Platform and Security engineer with a huge passion for open-source who specializes in deploying, maintaining, monitoring and operating software on CI/CD architecture for on premise and multi-cloud infrastructure using legacy deployment tools, cloud tooling and container orchestration. Experienced in administration, installation, configuration, tuning and upgrades in all flavours of Linux. Strong background in cloud security tooling, digital forensics, and network security having studied, deployed, monitored and designed rulesets for multiple different security tooling monitoring thousands of endpoints and helped achieve FedRAMP compliance within large enterprises.
+Principal Platform Engineer building cloud infrastructure, security tooling and developer platforms across GCP, AWS and on-prem. Currently own the SaaS platform at Ping Identity; multi-region GKE, FedRAMP environments and tenant lifecycle automation. Background in security engineering (PKI, DFIR, vulnerability management) turned platform builder. Implements consensus algorithms in Zig for fun and runs NixOS because apparently I enjoy troubleshooting my troubleshooting tools.
 
 # Skills
 
-## Operating Systems
-: Linux BSD Windows OSX
+**Languages**: Go · Zig · Python · Bash · HCL · Rego · Nix
 
-## Languages
-: Golang Python Bash Groovy Ruby Perl
+**Infrastructure**: Kubernetes · Terraform · GCP · AWS · Helm · Docker/OCI · NixOS
 
-## Technologies
-: AWS GCE GKE Azure Kubernetes Helm Docker OCI Harbor Istio Service Brokers Spinnaker Chef Terraform Ansible Saltstack Consul git Packer Jenkins Concourse Cerberus Vault Splunk SumoLogic Phantom DataDog osquery kolide OSSEC auditd SeLinux PKI EnCase TheSleuthKit GRR Nexpose Qualys Nessus Nmap Wireshark Bro tcpdump sops DNS
+**Security**: OPA/Rego · Gatekeeper · Cosign · FedRAMP · osquery · PKI · DFIR
+
+**Observability**: Prometheus · OpenTelemetry · Datadog · PagerDuty · Grafana
+
+**CI/CD**: GitHub Actions · Codefresh · Spinnaker · Concourse
+
+**Systems**: eBPF/XDP · WASM · Linux Kernel Modules · Distributed Systems
+
+
+# Open Source
+
+**[raftz](https://github.com/burdzwastaken/raftz)**: Raft consensus algorithm implementation in Zig
+
+**[zig-opa-wasm](https://github.com/burdzwastaken/zig-opa-wasm)**: Open Policy Agent WASM runtime in Zig
+
+**[regolint](https://github.com/burdzwastaken/regolint)**: Linter for OPA Rego policies, written in Go
+
+
+# Experience
+
+## Ping Identity (formerly ForgeRock)
+Principal Platform Engineer
+Singapore (remote)
+2021 - Present
+
+* Own the multi-region SaaS platform infrastructure powering Identity Cloud across US, EU and APAC; thousands of tenants, high availability, on-call for all of it
+* Designed and built FedRAMP-compliant infrastructure from scratch, enabling Ping to serve US federal customers with assured workloads and isolated environments
+* Built the multi-region tooling for active/passive state management across GKE clusters; leader election, CRD reconciliation and an API that tenant services depend on for failover decisions
+* Built the Gatekeeper policy framework: Rego policies that auto-generate ConstraintTemplates, Constraints and documentation; 70+ policies enforcing security and compliance controls across the fleet
+* Built self-service tenant lifecycle tooling in Go, replacing manual provisioning processes with automated workflows and reducing environment creation from days to minutes
+* Established supply chain security practices across CI/CD: image signing with Cosign, policy-as-code guardrails with OPA/Rego and automated compliance gates
+* Designed GCP IAM architecture, workload identity federation and disaster recovery strategies with validated RPO/RTO targets across regions
+* Drive platform architecture through design docs and ADRs; mentor engineers on coding, IaC patterns, cloud-native architecture and not paging me at 3am
+
+## MuleSoft (Salesforce)
+Senior Platform Engineer
+San Francisco, CA
+2017 - 2021
+
+* Architected and operated multi-region Kubernetes deployments managing 60,000+ runtimes across US, EU and AWS GovCloud using Spinnaker and Jenkins
+* Built Kubernetes CRDs and service catalog extensions for IAM credential injection, infrastructure provisioning and service mesh integration
+* Owned the internal OCI registry (Harbor) end-to-end: Helm deployment, Terraform config, ECR replication and vulnerability scanning with Clair
+* Developed zero-downtime cluster upgrade automation using multi-cluster DNS-based cutover and automated incident response workflows with PagerDuty and Slack
+
+## Lookout, Inc
+Senior Security Engineer
+San Francisco, CA
+2015 - 2017
+
+* Built and managed the entire PKI infrastructure: offline CAs, OCSP responders, validation authorities and public-facing certificate lifecycle
+* Developed osquery table extensions, S3 bootstrapping tools and IAM policy review pipelines in Go for fleet security and configuration distribution
+* Architected deployment of security monitoring across the fleet: osquery, OSSEC, auditd, GRR and built automated alert response processes
+* Ran automated vulnerability management with Nexpose and Nessus, hardened AMI pipelines with Packer and managed the HackerOne bug bounty program
+* Provided DFIR analysis for compromised hosts and ran company-wide phishing campaigns with GoPhish to keep everyone honest
+* Migrated all security microservices to Kubernetes on CoreOS, operating dedicated security clusters with Terraform and Chef
+
+## Newedge (Societe Generale)
+Onboarding Analyst
+Singapore
+2014
+
+* Client onboarding and account lifecycle management for a global investment bank; automated communication workflows to reduce manual processing
 
 
 # Education
@@ -39,105 +97,4 @@ Senior Platform and Security engineer with a huge passion for open-source who sp
 : Guildford Grammar School
 
 
-# Experience
-
-## MuleSoft
-Senior Platform Engineer
-San Francisco, CA
-August 2017 - Current
-
- * Operated the entire lifecycle and management of Harbor, our internal OCI registry. The registry was deployed via Helm to Kubernetes, Configured with Terraform and utilizing all features including centralized authentication, replication to ECR and security scanning of all images using Clair
- * Extended Kubernetes using CRDs and service catalog API to provide extended functionality such as IAM credentials to pods, Public cloud infrastructure provisioning and service mesh injection
- * Automated the entire incident process including alerting, documenting and recording of all incidents using Slack, Pagerduty, Jira and NewRelic
- * Own the reliability of production systems across development and production environments in US, EU and AWS GovCloud
- * Integrated Terraform, Ansible, Packer to create and version the AWS Infrastructure, designing, automating, implementing and sustainment of Amazon machine images (AMI) across the cloud environments
- * Lead the implementation of secure cloud architecture best practices & Pioneered Infrastructure-As-Code wherever possible
- * Integrated NewRelic as an automated, unified monitoring platform and reduce MTTR
- * Architected, deployed and operated high traffic micro-services on multi region large scale deployments to manage over sixty thousand runtimes by operating the core platform to ensure consistency, availability and reliability using tooling such as Kubernetes, Spinnaker and Jenkins
- * Automated monitoring and observability for all critical Core Platform services
- * Actively involved and hands-on in writing infrastructure tools and services for internal teams in Go, Python, and Bash
- * Developed and maintained automation to manage our cluster automation to securely upgrade our running clusters both in-place and through a multi cluster model with DNS based cut overs for zero downtime to our internal and external customers
-
-## Lookout, Inc
-Senior Security Engineer
-San Francisco, CA
-January 2015 - August 2017
-
- * Produced weekly hardened AMIs for multiple flavours of Linux which all of Lookout Infrastructure is deployed on. This was achieved using packer and debian packages deployed through Spinnaker. This allowed us to achieve federal compliance
- * Deployed and responsible for Cerberus - an opensource tool for Secrets management. This has been integrated with our CI/CD pipeline along with being used by all services for secure transportation of secrets
- * Deployed and maintained infosec Kubernetes clusters running CoreOS. All security microservices were migrated to this cluster
- * Created and managed entire PKI infrastructure including multiple offline Certificate and Validation Authorities, OCSP responders and our public facing certificates
- * Architected completely automated vulnerability management system using Nexpose and Nessus deployed with terraform and chef within AWS
- * Managed the Intrusion Detection System (IDS) infrastructure and responded to all suspicious traffic alerts with all office and datacenter networks
- * Secured all Lookout AWS accounts using a mix of open source and in house tool hosted in containers and AWS lambda
- * Architected the deployment of all security monitoring tools at Lookout. This included osquery, ossec auditd, GRR agent, scout2, security monkey and developed the process of responding to all alerts triggered
- * Migrated all security tools from the DataCenter to AWS including internal PKI infrastructure
- * Created environments for contractors to securely connect to our infrastructure. This included bastion hosts which are monitored, have secure key exchanges, fine grained policies that only allow for them to access the resources that are necessary
- * Developed automated process to securely erased all sensitive PII data on our physical hardware during the migration to AWS
- * Held company wide phishing campaigns using the tool GoPhish and custom templates. This allowed InfoSec to teach and promote security awareness throughout the organisation. This was deployed using Kubernetes and docker
- * Member of the Principal working group for AWS best practices
- * Member of the AppSec Champions initiative to promote security best practices across the engineering organisation
- * Participated in the Lookout migration to AWS which allowed for our consumer product to have zero downtime and function within the cloud
- * Developed a code review pipeline for AWS IAM policies in production. This allowed for a source of truth for all policies and the tightening of permissions within production
- * Provided DFIR analysis to all potentially infected machines within all Lookout network's
- * Created a tool (in golang) that allowed secure bootstrapping of systems from s3. This meant we were able to keep secrets out of plaintext repositories and into s3 buckets protected by IAM / bucket policies
- * Developed an osquery table extension that allowed the collection of AWS tags through the use of a role. This allowed our AWS tags to be ingested into our security event system
- * Developed multiple bots using AWS lambda functions with API gateways for various different functions
- * Developed processes and procedures for offboarding users. Often was responsible for offboarding employees with production access
- * Helped remediate issues and communication with researches through our bug bounty program with HackerOne
-
-## Ultimatum, Inc
-CSO, CIO
-San Francisco, CA
-2015 - 2018
-
- * Architected and deployed secure CI/CD infrastructure
- * Automated all backend architecture for creation of new environments
- * Maintained and updated all clusters that the Ultimatum platform runs on
- * Created monitoring for all microservices within the Ultimatum platform
- * Implemented a secure way of handling all company and environment secrets that allowed version control for audits
-
-## Newedge - Societe Generale
-Onboarding Analyst
-Singapore
-August 2014 - December 2014
-
- * Managed the implementation and onboarding of new client accounts
- * Perform initial sanity checks on documentation packages ensuring all activities are captured, accurately reviewed and processed in a timely fashion
- * Dealing with customers' requests concerning different changes on their accounts
- * Automated communication required to advise customers on changes to their accounts
-
-## Self Employed
-Swimming Instructor
-Singapore
-2009 - 2014
-
- * Created lesson plans for all students
- * Facilitated the certification process within the swimming lesson
- * Handled all finances and scheduling management
-
-## Perth Duty Free
-Warehouse Operations
-Perth
-2010 - 2012
-
- * Preparing and completing orders for delivery or pickup according to schedule
- * Receiving and processing warehouse stock products
- * Performing inventory controls and keeping quality standards high for audits
-
-## Dimension Data
-Work Experience
-Perth
-2009
-
- * Configuring and deploying Cisco routers
-
-
-# References
-
-*will provide at request*
-: 
-
-*will provide at request*
-: 
-
+*References available upon request.*

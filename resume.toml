@@ -1,0 +1,115 @@
+[header]
+name = "Matt Burdan"
+phone = "+1 (415) 542 6132"
+email = "burdz@burdz.net"
+handle = "@burdzwastaken"
+linkedin = "https://www.linkedin.com/in/burdz/"
+github = "https://github.com/burdzwastaken"
+website = "https://void.burdz.net"
+
+summary = "Principal Platform Engineer building cloud infrastructure, security tooling and developer platforms across GCP, AWS and on-prem. Currently own the SaaS platform at Ping Identity; multi-region GKE, FedRAMP environments and tenant lifecycle automation. Background in security engineering (PKI, DFIR, vulnerability management) turned platform builder. Implements consensus algorithms in Zig for fun and runs NixOS because apparently I enjoy troubleshooting my troubleshooting tools."
+
+[[skills]]
+title = "Languages"
+items = ["Go", "Zig", "Python", "Bash", "HCL", "Rego", "Nix"]
+
+[[skills]]
+title = "Infrastructure"
+items = ["Kubernetes", "Terraform", "GCP", "AWS", "Helm", "Docker/OCI", "NixOS"]
+
+[[skills]]
+title = "Security"
+items = ["OPA/Rego", "Gatekeeper", "Cosign", "FedRAMP", "osquery", "PKI", "DFIR"]
+
+[[skills]]
+title = "Observability"
+items = ["Prometheus", "OpenTelemetry", "Datadog", "PagerDuty", "Grafana"]
+
+[[skills]]
+title = "CI/CD"
+items = ["GitHub Actions", "Codefresh", "Spinnaker", "Concourse"]
+
+[[skills]]
+title = "Systems"
+items = ["eBPF/XDP", "WASM", "Linux Kernel Modules", "Distributed Systems"]
+
+[[opensource]]
+project = "raftz"
+url = "https://github.com/burdzwastaken/raftz"
+description = "Raft consensus algorithm implementation in Zig"
+
+[[opensource]]
+project = "zig-opa-wasm"
+url = "https://github.com/burdzwastaken/zig-opa-wasm"
+description = "Open Policy Agent WASM runtime in Zig"
+
+[[opensource]]
+project = "regolint"
+url = "https://github.com/burdzwastaken/regolint"
+description = "Linter for OPA Rego policies, written in Go"
+
+[[experience]]
+employer = "Ping Identity (formerly ForgeRock)"
+role = "Principal Platform Engineer"
+location = "Singapore (remote)"
+timeframe = "2021 - Present"
+responsibilities = [
+  "Own the multi-region SaaS platform infrastructure powering Identity Cloud across US, EU and APAC; thousands of tenants, high availability, on-call for all of it",
+  "Designed and built FedRAMP-compliant infrastructure from scratch, enabling Ping to serve US federal customers with assured workloads and isolated environments",
+  "Built the multi-region tooling for active/passive state management across GKE clusters; leader election, CRD reconciliation and an API that tenant services depend on for failover decisions",
+  "Built the Gatekeeper policy framework: Rego policies that auto-generate ConstraintTemplates, Constraints and documentation; 70+ policies enforcing security and compliance controls across the fleet",
+  "Built self-service tenant lifecycle tooling in Go, replacing manual provisioning processes with automated workflows and reducing environment creation from days to minutes",
+  "Established supply chain security practices across CI/CD: image signing with Cosign, policy-as-code guardrails with OPA/Rego and automated compliance gates",
+  "Designed GCP IAM architecture, workload identity federation and disaster recovery strategies with validated RPO/RTO targets across regions",
+  "Drive platform architecture through design docs and ADRs; mentor engineers on coding, IaC patterns, cloud-native architecture and not paging me at 3am",
+]
+
+[[experience]]
+employer = "MuleSoft (Salesforce)"
+role = "Senior Platform Engineer"
+location = "San Francisco, CA"
+timeframe = "2017 - 2021"
+responsibilities = [
+  "Architected and operated multi-region Kubernetes deployments managing 60,000+ runtimes across US, EU and AWS GovCloud using Spinnaker and Jenkins",
+  "Built Kubernetes CRDs and service catalog extensions for IAM credential injection, infrastructure provisioning and service mesh integration",
+  "Owned the internal OCI registry (Harbor) end-to-end: Helm deployment, Terraform config, ECR replication and vulnerability scanning with Clair",
+  "Developed zero-downtime cluster upgrade automation using multi-cluster DNS-based cutover and automated incident response workflows with PagerDuty and Slack",
+]
+
+[[experience]]
+employer = "Lookout, Inc"
+role = "Senior Security Engineer"
+location = "San Francisco, CA"
+timeframe = "2015 - 2017"
+responsibilities = [
+  "Built and managed the entire PKI infrastructure: offline CAs, OCSP responders, validation authorities and public-facing certificate lifecycle",
+  "Developed osquery table extensions, S3 bootstrapping tools and IAM policy review pipelines in Go for fleet security and configuration distribution",
+  "Architected deployment of security monitoring across the fleet: osquery, OSSEC, auditd, GRR and built automated alert response processes",
+  "Ran automated vulnerability management with Nexpose and Nessus, hardened AMI pipelines with Packer and managed the HackerOne bug bounty program",
+  "Provided DFIR analysis for compromised hosts and ran company-wide phishing campaigns with GoPhish to keep everyone honest",
+  "Migrated all security microservices to Kubernetes on CoreOS, operating dedicated security clusters with Terraform and Chef",
+]
+
+[[experience]]
+employer = "Newedge (Societe Generale)"
+role = "Onboarding Analyst"
+location = "Singapore"
+timeframe = "2014"
+responsibilities = [
+  "Client onboarding and account lifecycle management for a global investment bank; automated communication workflows to reduce manual processing",
+]
+
+[[education]]
+year_start = 2012
+year_complete = 2014
+description = "Bachelor of Science; Cyber Forensics, Information Security Management and Business Information Systems; Murdoch University"
+
+[[education]]
+year_start = 2011
+year_complete = 2012
+description = "Diploma; Information Technology; Kaplan Singapore"
+
+[[education]]
+year_start = 2005
+year_complete = 2009
+description = "Guildford Grammar School"

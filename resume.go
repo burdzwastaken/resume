@@ -1,181 +1,125 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
+	"log"
 	"os"
 	"text/template"
+
+	"github.com/BurntSushi/toml"
 )
 
+type Resume struct {
+	Header     Header       `toml:"header"`
+	Skills     []Skill      `toml:"skills"`
+	OpenSource []OpenSource `toml:"opensource"`
+	Experience []Experience `toml:"experience"`
+	Education  []Education  `toml:"education"`
+}
+
+type Header struct {
+	Name     string `toml:"name"`
+	Phone    string `toml:"phone"`
+	Email    string `toml:"email"`
+	Handle   string `toml:"handle"`
+	LinkedIn string `toml:"linkedin"`
+	GitHub   string `toml:"github"`
+	Website  string `toml:"website"`
+	Summary  string `toml:"summary"`
+}
+
 type Skill struct {
-	Title        string
-	Specialities []string
+	Title string   `toml:"title"`
+	Items []string `toml:"items"`
 }
 
-type Education struct {
-	YearStart    int
-	YearComplete int
-	Description  string
-}
-
-type References struct {
-	Name        string
-	Description string
+type OpenSource struct {
+	Project     string `toml:"project"`
+	URL         string `toml:"url"`
+	Description string `toml:"description"`
 }
 
 type Experience struct {
-	Employer         string
-	Role             string
-	Location         string
-	TimeFrame        string
-	Responsibilities []string
+	Employer         string   `toml:"employer"`
+	Role             string   `toml:"role"`
+	Location         string   `toml:"location"`
+	Timeframe        string   `toml:"timeframe"`
+	Responsibilities []string `toml:"responsibilities"`
 }
 
-func main() {
-	skills := []*Skill{}
-	skillBytes, err := ioutil.ReadFile("skills.json")
-	if err != nil {
-		fmt.Println("Error reading skills.json:", err)
-		fmt.Println(string(skillBytes))
-		os.Exit(1)
-	}
+type Education struct {
+	YearStart    int    `toml:"year_start"`
+	YearComplete int    `toml:"year_complete"`
+	Description  string `toml:"description"`
+}
 
-	err = json.Unmarshal(skillBytes, &skills)
-	if err != nil {
-		fmt.Println("Error unmarshalling skills:", err)
-		fmt.Println(string(skillBytes))
-		os.Exit(1)
-	}
+const resumeTemplate = `---
+name: {{ .Header.Name }}
+left-column:
+  - '{{ .Header.Phone }}'
+  - '{{ .Header.Email }}'
+  - '{{ .Header.Handle }}'
+right-column:
+  - '{{ .Header.LinkedIn }}'
+  - '{{ .Header.GitHub }}'
+  - '{{ .Header.Website }}'
+  - 'Last Updated: \today'
+---
 
-	skillTmpl, err := template.New("skill").Parse(`
+# Summary
+
+{{ .Header.Summary }}
+
 # Skills
 
-{{ range . }}## {{ .Title }}
-:{{ range .Specialities }} {{ . }}{{ end }}
+{{ range .Skills }}**{{ .Title }}**: {{ range $i, $v := .Items }}{{ if $i }} · {{ end }}{{ $v }}{{ end }}
 
-{{ end }}`)
-	if err != nil {
-		fmt.Println("Error parsing skills template:", err)
-		os.Exit(1)
-	}
+{{ end }}
+# Open Source
 
-	edu := []*Education{}
-	eduBytes, err := ioutil.ReadFile("education.json")
-	if err != nil {
-		fmt.Println("Error reading education.json:", err)
-		fmt.Println(string(eduBytes))
-		os.Exit(1)
-	}
+{{ range .OpenSource }}**[{{ .Project }}]({{ .URL }})**: {{ .Description }}
 
-	err = json.Unmarshal(eduBytes, &edu)
-	if err != nil {
-		fmt.Println("Error unmarshalling education:", err)
-		fmt.Println(string(eduBytes))
-		os.Exit(1)
-	}
-
-	eduTmpl, err := template.New("education").Parse(`
-# Education
-
-{{ range . }}*{{ .YearStart }}*-*{{ .YearComplete }}*
-: {{ .Description }}
-
-{{ end }}`)
-	if err != nil {
-		fmt.Println("Error parsing education template:", err)
-		os.Exit(1)
-	}
-
-	responsbility := []*Experience{}
-	respBytes, err := ioutil.ReadFile("experience.json")
-	if err != nil {
-		fmt.Println("Error reading experience.json:", err)
-		fmt.Println(string(respBytes))
-		os.Exit(1)
-	}
-
-	err = json.Unmarshal(respBytes, &responsbility)
-	if err != nil {
-		fmt.Println("Error unmarshalling experience:", err)
-		fmt.Println(string(respBytes))
-		os.Exit(1)
-	}
-
-	respTmpl, err := template.New("experience").Parse(`
+{{ end }}
 # Experience
 
-{{ range . }}## {{ .Employer }}
+{{ range .Experience }}## {{ .Employer }}
 {{ .Role }}
 {{ .Location }}
-{{ .TimeFrame }}
+{{ .Timeframe }}
 
-{{ range .Responsibilities }} * {{ . }}
+{{ range .Responsibilities }}* {{ . }}
 {{ end }}
-{{ end }}`)
-	if err != nil {
-		fmt.Println("Error parsing experience template:", err)
-		os.Exit(1)
-	}
+{{ end }}
+# Education
 
-	ref := []*References{}
-	refBytes, err := ioutil.ReadFile("references.json")
-	if err != nil {
-		fmt.Println("Error reading references.json:", err)
-		fmt.Println(string(refBytes))
-		os.Exit(1)
-	}
-
-	err = json.Unmarshal(refBytes, &ref)
-	if err != nil {
-		fmt.Println("Error unmarshalling references:", err)
-		fmt.Println(string(refBytes))
-		os.Exit(1)
-	}
-
-	refTmpl, err := template.New("references").Parse(`
-# References
-
-{{ range . }}*{{ .Name }}*
+{{ range .Education }}*{{ .YearStart }}*-*{{ .YearComplete }}*
 : {{ .Description }}
 
-{{ end }}`)
+{{ end }}
+*References available upon request.*
+`
+
+func main() {
+	var resume Resume
+	if _, err := toml.DecodeFile("resume.toml", &resume); err != nil {
+		log.Fatal("Error decoding resume.toml: ", err)
+	}
+
+	tmpl, err := template.New("resume").Parse(resumeTemplate)
 	if err != nil {
-		fmt.Println("Error parsing references template:", err)
-		os.Exit(1)
+		log.Fatal("Error parsing template: ", err)
 	}
 
 	f, err := os.Create("README.md")
 	if err != nil {
-		fmt.Println("Error opening README.md:", err)
-		os.Exit(1)
-	}
-	defer f.Close()
-
-	err = copyContents("HEADER.md", f)
-	skillTmpl.Execute(f, skills)
-	eduTmpl.Execute(f, edu)
-	respTmpl.Execute(f, responsbility)
-	refTmpl.Execute(f, ref)
-}
-
-func copyContents(origin string, target *os.File) error {
-	f, err := os.Open(origin)
-	if err != nil {
-		fmt.Println("Error opening "+origin+":", err)
-		os.Exit(1)
-	}
-	defer f.Close()
-
-	contents, err := ioutil.ReadAll(f)
-	if err != nil {
-		return err
+		log.Fatal("Error creating README.md: ", err)
 	}
 
-	_, err = target.Write(contents)
-	if err != nil {
-		return err
+	if err := tmpl.Execute(f, resume); err != nil {
+		_ = f.Close()
+		log.Fatal("Error executing template: ", err)
 	}
 
-	return nil
+	if err := f.Close(); err != nil {
+		log.Fatal("Error closing README.md: ", err)
+	}
 }
